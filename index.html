@@ -248,6 +248,7 @@
             padding: 30px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         
         .feature-card:hover {
@@ -265,6 +266,88 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--dark-color);
+        }
+        
+        /* Feature Detail Section */
+        .feature-detail {
+            display: none;
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .feature-detail.active {
+            display: block;
+        }
+        
+        .feature-detail-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .feature-detail-image {
+            flex: 1;
+        }
+        
+        .feature-detail-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-detail-text {
+            flex: 1;
+        }
+        
+        .feature-detail-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .feature-detail-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .feature-benefits {
+            margin: 30px 0;
+        }
+        
+        .feature-benefits h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .feature-benefits ul {
+            margin-left: 20px;
+        }
+        
+        .feature-benefits li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-benefits li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        .back-to-features {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .back-to-features i {
+            margin-right: 5px;
         }
         
         /* About Section */
@@ -626,6 +709,14 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .feature-detail-content {
+                flex-direction: column;
+            }
+            
+            .feature-detail-image {
+                margin-bottom: 30px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -751,47 +842,236 @@
         <div class="container">
             <h2 class="section-title text-center">Powerful Features</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card" data-feature="student-management">
                     <div class="feature-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
                     <h3>Student Management</h3>
                     <p>Easily manage student profiles, enrollment, and academic records in one centralized system.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="teacher-portal">
                     <div class="feature-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h3>Teacher Portal</h3>
                     <p>Empower teachers with tools for attendance, gradebook, lesson planning and communication.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="attendance-tracking">
                     <div class="feature-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Attendance Tracking</h3>
                     <p>Automate attendance recording with real-time notifications for parents and administrators.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="gradebook">
                     <div class="feature-icon">
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>Gradebook</h3>
                     <p>Comprehensive gradebook system with customizable grading scales and report card generation.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="notifications">
                     <div class="feature-icon">
                         <i class="fas fa-bell"></i>
                     </div>
                     <h3>Notifications</h3>
                     <p>Instant alerts and notifications for important announcements, events, and student progress.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-feature="analytics">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Analytics</h3>
                     <p>Powerful reporting and analytics tools to track performance and make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Management Feature Detail -->
+    <section class="feature-detail" id="student-management-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Student Management">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Comprehensive Student Management</h2>
+                    <p>Our student management system provides a complete solution for handling all aspects of student information, from enrollment to graduation. Streamline your administrative processes and keep all student data organized in one secure location.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>Key Benefits:</h3>
+                        <ul>
+                            <li>Centralized student profiles with demographic, contact, and academic information</li>
+                            <li>Easy enrollment and registration processes with digital forms</li>
+                            <li>Customizable student grouping by class, grade, or other categories</li>
+                            <li>Health records and immunization tracking</li>
+                            <li>Discipline and behavior incident logging</li>
+                            <li>Parent and guardian relationship management</li>
+                            <li>Document management for transcripts, certificates, and more</li>
+                        </ul>
+                    </div>
+                    
+                    <p>With our intuitive interface, school administrators can quickly access any student's complete record, generate reports, and manage student lifecycles efficiently.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Portal Feature Detail -->
+    <section class="feature-detail" id="teacher-portal-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Teacher Portal">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Teacher Portal</h2>
+                    <p>Empower your educators with a comprehensive portal designed specifically for their needs. Our teacher portal simplifies classroom management and enhances communication between teachers, students, and parents.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>Key Features:</h3>
+                        <ul>
+                            <li>Integrated gradebook with customizable grading scales</li>
+                            <li>Lesson planning tools with curriculum mapping</li>
+                            <li>Attendance tracking with automated notifications</li>
+                            <li>Behavior and participation logging</li>
+                            <li>Parent communication portal with messaging system</li>
+                            <li>Resource sharing and document management</li>
+                            <li>Professional development tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Teachers can focus on what matters most - educating students - while our system handles the administrative workload efficiently.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Tracking Feature Detail -->
+    <section class="feature-detail" id="attendance-tracking-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Attendance Tracking">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Automated Attendance Tracking</h2>
+                    <p>Transform your attendance management with our automated tracking system that saves time, reduces errors, and keeps parents informed in real-time.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>System Highlights:</h3>
+                        <ul>
+                            <li>Multiple attendance methods (manual entry, biometric, RFID card, mobile app)</li>
+                            <li>Real-time notifications to parents for absences or tardies</li>
+                            <li>Automated reporting for state compliance and funding</li>
+                            <li>Customizable attendance codes for different absence types</li>
+                            <li>Historical attendance tracking and pattern analysis</li>
+                            <li>Integration with gradebook and behavior systems</li>
+                            <li>Mobile access for teachers to take attendance anywhere</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Our attendance system helps schools maintain accurate records while improving student accountability and parent communication.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gradebook Feature Detail -->
+    <section class="feature-detail" id="gradebook-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Gradebook System">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Advanced Gradebook System</h2>
+                    <p>Our comprehensive gradebook solution simplifies grading while providing powerful tools for assessment analysis and reporting.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>Gradebook Features:</h3>
+                        <ul>
+                            <li>Customizable grading scales and calculation methods</li>
+                            <li>Support for standards-based grading and traditional grading</li>
+                            <li>Rubric-based assessment with detailed feedback</li>
+                            <li>Automated report card generation</li>
+                            <li>Parent and student portals for grade access</li>
+                            <li>Progress monitoring and intervention tracking</li>
+                            <li>Historical grade tracking and trend analysis</li>
+                            <li>Integration with learning management systems</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Teachers can spend less time calculating grades and more time providing meaningful feedback to students with our intuitive gradebook system.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notifications Feature Detail -->
+    <section class="feature-detail" id="notifications-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Notifications System">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Smart Notification System</h2>
+                    <p>Keep everyone informed with our multi-channel notification system that ensures important messages reach the right people at the right time.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>Notification Capabilities:</h3>
+                        <ul>
+                            <li>Automated alerts for attendance, grades, and behavior</li>
+                            <li>Customizable notification templates</li>
+                            <li>Multi-channel delivery (SMS, email, mobile app, web)</li>
+                            <li>Emergency alert system for school-wide notifications</li>
+                            <li>Event reminders and calendar integration</li>
+                            <li>Targeted messaging by group, grade, or individual</li>
+                            <li>Delivery confirmation and read receipts</li>
+                            <li>Two-way communication with parents</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Improve school-home communication and ensure critical information is never missed with our reliable notification system.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Feature Detail -->
+    <section class="feature-detail" id="analytics-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-image">
+                    <img src="https://via.placeholder.com/500x400" alt="Analytics Dashboard">
+                </div>
+                <div class="feature-detail-text">
+                    <h2>Data Analytics & Reporting</h2>
+                    <p>Transform raw data into actionable insights with our powerful analytics tools designed specifically for educational institutions.</p>
+                    
+                    <div class="feature-benefits">
+                        <h3>Analytics Features:</h3>
+                        <ul>
+                            <li>Interactive dashboards with key performance indicators</li>
+                            <li>Custom report builder with drag-and-drop interface</li>
+                            <li>Student progress tracking and early warning systems</li>
+                            <li>Attendance pattern analysis</li>
+                            <li>Standardized test score analysis</li>
+                            <li>Teacher performance metrics</li>
+                            <li>Export capabilities for state and federal reporting</li>
+                            <li>Data visualization tools (charts, graphs, heat maps)</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Make data-driven decisions to improve student outcomes, optimize resources, and demonstrate accountability to stakeholders.</p>
+                    <a href="#features" class="back-to-features"><i class="fas fa-arrow-left"></i> Back to Features</a>
                 </div>
             </div>
         </div>
@@ -940,11 +1220,11 @@
                 <div class="footer-col">
                     <h3>Features</h3>
                     <ul>
-                        <li><a href="#">Student Management</a></li>
-                        <li><a href="#">Teacher Portal</a></li>
-                        <li><a href="#">Attendance Tracking</a></li>
-                        <li><a href="#">Gradebook</a></li>
-                        <li><a href="#">Analytics</a></li>
+                        <li><a href="#" class="feature-link" data-feature="student-management">Student Management</a></li>
+                        <li><a href="#" class="feature-link" data-feature="teacher-portal">Teacher Portal</a></li>
+                        <li><a href="#" class="feature-link" data-feature="attendance-tracking">Attendance Tracking</a></li>
+                        <li><a href="#" class="feature-link" data-feature="gradebook">Gradebook</a></li>
+                        <li><a href="#" class="feature-link" data-feature="analytics">Analytics</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1047,6 +1327,68 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Feature Detail Toggle
+        const featureCards = document.querySelectorAll('.feature-card');
+        const featureLinks = document.querySelectorAll('.feature-link');
+        const featureDetails = document.querySelectorAll('.feature-detail');
+        
+        function showFeatureDetail(featureId) {
+            // Hide all feature details
+            featureDetails.forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Show the selected feature detail
+            const detailToShow = document.getElementById(`${featureId}-detail`);
+            if(detailToShow) {
+                detailToShow.classList.add('active');
+                
+                // Scroll to the feature detail section
+                window.scrollTo({
+                    top: detailToShow.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Add click event to feature cards
+        featureCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const featureId = card.getAttribute('data-feature');
+                showFeatureDetail(featureId);
+            });
+        });
+        
+        // Add click event to feature links in footer
+        featureLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const featureId = link.getAttribute('data-feature');
+                showFeatureDetail(featureId);
+            });
+        });
+        
+        // Close feature detail when clicking back to features
+        document.querySelectorAll('.back-to-features').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Hide all feature details
+                featureDetails.forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                
+                // Scroll back to features section
+                const featuresSection = document.getElementById('features');
+                if(featuresSection) {
+                    window.scrollTo({
+                        top: featuresSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
